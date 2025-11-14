@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Visual X — Screenwriting, cinematography, editing and media production for brands, films, and digital media." />
+  <title>Visual X — Media Production Company</title>
+  <!-- Google font fallback: Poppins used in original -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#000000;
+      --bg2:oklab(42.480000000000004% 0.08222 -0.16435);
+      --accent:#ff8c00;
+      --glass: rgba(255,255,255,0.06);
+      --glass-strong: rgba(255,255,255,0.10);
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background: linear-gradient(135deg,var(--bg1),#1a2a6c 40%, var(--bg2));
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      scroll-behavior:smooth;
+    }
+
+    /* Header */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:120;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 24px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(255,255,255,0));
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px;width:100%}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:46px;height:46px;border-radius:10px;background:
+      conic-gradient(from 120deg,#ff8c00,#ffd07a 40%, #7bdff6 70%, #8a8cff 100%);
+      box-shadow:0 6px 20px #0000006e, inset 0 -6px 18px rgba(255,255,255,0.02);
+      display:grid;place-items:center;font-weight:700;color:#07102a;
+      font-size:18px;
+    }
+    header h1{font-size:18px;margin:0;color:#fff;letter-spacing:0.2px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{
+      color:#fff;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;
+      transition:all .18s ease;
+    }
+    nav a:hover, nav a[aria-current="true"]{background:var(--glass-strong); color:var(--accent)}
+
+    /* Mobile nav toggle */
+    .nav-toggle{display:none;border:0;background:transparent;color:#fff;font-size:20px}
+
+    /* Hero */
+    .hero{
+      min-height:86vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding-top:88px; /* account for fixed header */
+    }
+    .hero-inner{
+      width:100%;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:50px;
+      align-items:center;
+      padding:20px; /* Reduced from 40px to 20px */
+    }
+    .hero-copy h2{
+      margin:0 0 16px 0;
+      font-size:44px;
+      line-height:1.02;
+      letter-spacing:-0.5px;
+    }
+    .lead{font-size:18px;color:rgba(255,255,255,0.9);margin-bottom:18px;max-width:48rem}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 18px;border-radius:999px;border:0;cursor:pointer;font-weight:700;
+      text-decoration:none;color:#07102a;background:linear-gradient(90deg,var(--accent),#ffc36b);
+      box-shadow:0 8px 26px rgba(255,140,0,0.12);
+      transition:transform .16s ease,box-shadow .16s ease;
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,0.35)}
+    .btn.alt{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.08);box-shadow:none}
+
+    /* Visual / media card */
+    .media-card{
+      border-radius:16px;padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.12));
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .media-preview{
+      width:100%;height:240px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#111 0%, rgba(255,255,255,0.02)100%);
+      display:grid;place-items:center;position:relative;
+    }
+    .media-preview svg{opacity:0.08;position:absolute;inset:0;width:100%;height:100%}
+    .media-meta{display:flex;justify-content:space-between;align-items:center;padding:6px 4px}
+
+    /* Sections */
+    section{padding:80px 0}
+    h2.section-title{font-size:28px;margin:0 0 12px 0}
+    p.section-sub{color:rgba(255,255,255,0.8);margin:0 0 26px 0;max-width:60ch}
+
+    /* Services / cards */
+    .grid{display:grid;gap:20px}
+    .services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .card{
+      background:var(--glass);padding:20px;border-radius:12px;
+      backdrop-filter: blur(8px);border:1px solid rgba(255,255,255,0.03);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(2,6,23,0.5)}
+    .card h4{margin:0 0 8px 0}
+    .card p{margin:0;color:rgba(255,255,255,0.85)}
+
+    /* Portfolio */
+    .portfolio{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .portfolio-item {
+      height:220px;
+      border-radius:12px;
+      overflow:hidden;
+      position:relative;
+      background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.14));
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:14px;
+      border:1px solid rgba(255,255,255,0.03);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .portfolio-item:hover {
+      transform:translateY(-8px) scale(1.04);
+      box-shadow:0 30px 70px rgba(2,6,23,0.5);
+      z-index:2;
+    }
+    .portfolio-overlay {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));
+      opacity:0;
+      transition:opacity .18s;
+    }
+    .portfolio-item:hover .portfolio-overlay {
+      opacity:1;
+    }
+
+    /* Team */
+    .team{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+    .member{display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px}
+    .avatar{width:104px;height:104px;border-radius:14px;background:linear-gradient(180deg,#fff, #eee);display:grid;place-items:center;color:#07102a;font-weight:700;font-size:22px;box-shadow:0 10px 30px rgba(2,6,23,0.5)}
+
+    /* Contact area */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:28px}
+    form{display:flex;flex-direction:column;gap:12px}
+    input,textarea,select{
+      width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
+      background:rgba(0,0,0,0.18);color:lab(100% 0.01 -0.01);font-size:15px;
+    }
+    select#project, #project option {
+      background-color: #0008ff !important;
+      color: hsl(0, 0%, 100%);
+    }
+    textarea{min-height:140px;resize:vertical}
+    .muted{color:hwb(0 100% 0%);font-size:14px}
+
+    footer{
+      padding:28px 0;background:linear-gradient(180deg, rgba(0,0,0,0.06), transparent);border-top:1px solid rgba(255,255,255,0.02);
+      margin-top:40px;
+    }
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-inner{grid-template-columns:1fr; padding:28px}
+      .contact-grid{grid-template-columns:1fr}
+      .media-preview{height:200px}
+      .nav-toggle{display:block}
+      nav{display:none}
+      header nav.open{display:flex;position:absolute;right:20px;top:66px;background:rgba(11,7,20,0.7);padding:10px;border-radius:12px;flex-direction:column}
+    }
+
+    /* Make portfolio items look and behave like team cards */
+    .portfolio-item {
+      background: var(--glass);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: transform .18s ease, box-shadow .18s ease;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.18);
+      min-height: 200px;         /* Reduced from 320px */
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    .portfolio-item img {
+      object-fit: cover;
+      width: 72px;               /* Reduced from 104px */
+      height: 72px;              /* Reduced from 104px */
+      margin-bottom: 8px;        /* Reduced from 8px */
+      margin-top: 10px;           /* Reduced from 10px */
+      background: #fff;
+      display: block;
+    }
+
+    .portfolio-item h5 {
+      margin: 0 0 12px 0; /* Increased bottom margin from 4px to 12px */
+      font-size: 15px;
+      text-align: left;
+    }
+
+    .portfolio-item .muted {
+      color: hwb(0 100% 0%);
+      font-size: 12px;           /* Reduced from 14px */
+      text-align: left;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 30px 70px rgba(2,6,23,0.5);
+      z-index: 2;
+    }
+
+    .portfolio-overlay {
+      display: none !important;
+    }
+
+  </style>
+</head>
+<body>
+  <header role="banner" aria-label="Main header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand" aria-hidden="false">
+        <div class="logo" aria-hidden="true">VX</div>
+        <div>
+          <h1 style="margin:0;font-size:16px">Visual X Productions</h1>
+          <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px">Film • Brand • Digital</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation" id="primaryNav">
+        <a href="#home" aria-current="true">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="hero" aria-label="Hero section">
+      <div class="container hero-inner" role="region" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h2 id="hero-title">We tell stories that move people — visuals, sound, emotion.</h2>
+          <p class="lead">Visual X is a full-service media production house: screenwriting, cinematography, editing, and brand films. We craft cinematic experiences across platforms — from shorts and ads to feature content.</p>
+          <div class="actions">
+            <a class="btn" href="#contact">Start a Project</a>
+            <a class="btn alt" href="#portfolio">View Portfolio</a>
+          </div>
+        </div>
+
+        <aside class="media-card" aria-label="Featured showreel preview">
+          <div class="media-preview" role="img" aria-label="Recent Work video">
+            <video id="mainVideoPlayer" controls width="100%" height="240" poster="images/Hope.jpg" style="border-radius:12px;">
+              <source src="images/Hope.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="media-meta" aria-hidden="false">
+            <div>
+              <strong>Recent Work</strong>
+              <div class="muted">Brand film • 2:13</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <a class="btn alt" href="#portfolio" style="padding:8px 12px">See Projects</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" aria-labelledby="portfolio-title" style="margin-top:100px;">
+      <div class="container">
+        <h2 class="section-title" id="portfolio-title">Selected Portfolio</h2>
+        <p class="section-sub">A curated selection of recent films, ads and brand films. Replace these placeholders with your own thumbnails or video embeds.</p>
+
+        <div class="grid portfolio" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+          <div class="portfolio-item" role="article" aria-label="Project One">
+            <img src="images/Art_Poster_-_Pather_Panchali_-_Satyajit_Ray_Collection.jpg" alt="Feature Film" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+            <div class="portfolio-overlay"></div>
+            <h5>Feature Film</h5>
+            <div class="muted"></div>
+          </div>
+          <div class="portfolio-item" role="article" aria-label="Project Two">
+            <img src="images/whatsapp-image-2021-09-16-at-12-21-15-pm_orig.jpeg" alt="Short Film" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+            <div class="portfolio-overlay"></div>
+            <h5>Short Film</h5>
+            <div class="muted"></div>
+          </div>
+          <div class="portfolio-item" role="article" aria-label="Project Three">
+            <img src="images/Mahavatar_Narsimha_film_poster.jpg" alt="Animation" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+            <div class="portfolio-overlay"></div>
+            <h5>Animation</h5>
+            <div class="muted"></div>
+          </div>
+          <div class="portfolio-item" role="article" aria-label="Project Four">
+            <img src="images/movies-hollywood-movies-wallpaper-preview.jpg" alt="VFX and CGI" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+            <div class="portfolio-overlay"></div>
+            <h5>VFX and CGI</h5>
+            <div class="muted"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" aria-labelledby="team-title" style="margin-top:-150px;"></section>
+      <div class="container">
+        <h2 class="section-title" id="team-title">Core Team</h2>
+        <p class="section-sub">Small and nimble — we scale the crew depending on the project.</p>
+
+        <div class="grid team" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));">
+          <div class="card member" role="article" aria-label="Sayan Biswas, Founder & Director">
+            <img src="images/WhatsApp Image 2025-11-14 at 19.07.42_579e057b.jpg" alt="Sayan Biswas" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
+            <div style="text-align:center"><strong>Sayan Biswas</strong><div class="muted">Founder & Director</div></div>
+          </div>
+          <div class="card member" role="article" aria-label="Debjyoti Pal, Director & Producer">
+            <img src="images/IMG_20240602_002109_603.jpg" alt="Debjyoti Pal" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
+            <div style="text-align:center"><strong>Debjyoti Pal</strong><div class="muted">Director & Producer</div></div>
+          </div>
+          <div class="card member" role="article" aria-label="Partha Pratim Kar, VFX Supervisor">
+            <img src="images/Screenshot_2025-11-14-19-05-57-09_1c337646f29875672b5a61192b9010f9.jpg" alt="Partha Pratim Kar" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
+            <div style="text-align:center"><strong>Partha Pratim Kar</strong><div class="muted">VFX Supervisor</div></div>
+          </div>
+          <div class="card member" role="article" aria-label="Dhruv Bhattacharjya, Actor & Director">
+            <img src="images/Screenshot_2025-11-14-19-04-42-87_1c337646f29875672b5a61192b9010f9.jpg" alt="Dhruv Bhattacharjya" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
+            <div style="text-align:center"><strong>Dhruv Bhattacharjya</strong><div class="muted">Actor & Director</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title" style="margin-top:-40px;"></section>
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Contact & Start a Project</h2>
+        <p class="section-sub">Tell us about your project. Use the form below — it will open your email client with details prefilled (works across desktop & mobile).</p>
+
+        <div class="contact-grid" style="align-items:start">
+          <div>
+            <form id="contactForm" onsubmit="handleContact(event)" aria-label="Contact form">
+              <label class="muted" for="name">Your name</label>
+              <input id="name" name="name" required placeholder="Full name" />
+
+              <label class="muted" for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="sayanbiswas6922@gmail.com" />
+
+              <label class="muted" for="project">Project type</label>
+              <select id="project" name="project" required>
+                <option value="">Select...</option>
+                <option>Feature Film</option>
+                <option>Short Film</option>
+                <option>Ad Film</option>
+                <option>Animation</option>
+                <option>Editing & VFX</option>
+                <option>Other</option>
+              </select>
+
+              <label class="muted" for="message" style="color:#fff">Project brief</label>
+              <textarea id="message" name="message" placeholder="Briefly describe scope, deliverables, timeline, and budget (optional)"></textarea>
+
+              <div style="display:flex;gap:12px;margin-top:8px">
+                <button type="submit" class="btn">Email us</button>
+                <button type="button" class="btn alt" onclick="openWhatsApp()">Message on WhatsApp</button>
+              </div>
+            </form>
+          </div>
+
+          <aside style="padding:18px;border-radius:12px;background:var(--glass)">
+            <h4 style="margin-top:0">Quick contacts</h4>
+            <p class="muted">Office email</p>
+            <p><a href="mailto:sayanbiswas6922@gmail.com" style="color:var(--accent);text-decoration:none;font-weight:700">sayanbiswas6922@gmail.com</a></p>
+
+            <p class="muted">Phone</p>
+            <p><a href="tel:+919609573435" style="color:var(--accent);text-decoration:none;font-weight:700">+91 9609573435</a></p>
+
+            <p class="muted">Studio</p>
+            <p style="margin-top:6px">Barasat, Kolkata, India</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> All rights reserved to Visual X Productions.</div>
+        <div class="muted">Designed by Sayan Biswas</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // small helpers, progressive enhancement
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('primaryNav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const id = href.slice(1);
+          const section = document.getElementById(id);
+          if (section) {
+            e.preventDefault();
+            // Close mobile nav if open
+            nav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            // Scroll to section smoothly, offset for fixed header
+            const yOffset = -80;
+            const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Contact form: open mail client prefilled (works across devices)
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const project = document.getElementById('project').value || 'Not specified';
+      const message = document.getElementById('message').value.trim() || '—';
+
+      const subject = encodeURIComponent('New project enquiry from ' + name);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nProject type: ${project}\n\nProject brief:\n${message}\n\n---\nSent from Visual X website`
+      );
+
+      // open the user's email client
+      window.location.href = `Mail to : hello@visualx.example?subject=${subject}&body=${body}`;
+    }
+
+    // WhatsApp quick chat (works if user has WhatsApp)
+    function openWhatsApp(){
+      const phone = '+911234567890';
+      const text = encodeURIComponent('Hi Visual X — I would like to discuss a project. Please connect.');
+      window.open(`https://wa.me/${phone.replace(/\D/g,'')}?text=${text}`, '_blank');
+    }
+
+    // Smoothly highlight nav on scroll (basic)
+    const navLinks = Array.from(document.querySelectorAll('nav a'));
+    const sections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY + 120;
+      for(let i = sections.length - 1; i >= 0; i--){
+        const s = sections[i];
+        if(!s) continue;
+        if(y >= s.offsetTop){
+          navLinks.forEach(l => l.removeAttribute('aria-current'));
+          navLinks[i].setAttribute('aria-current','true');
+          break;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
