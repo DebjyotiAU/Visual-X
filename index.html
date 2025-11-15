@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Visual X — Screenwriting, cinematography, editing and media production for brands, films, and digital media." />
-  <title>Visual X — Media Production Company</title>
-  <!-- Google font fallback: Poppins used in original -->
+  <meta name="description" content="GlowZ — Natural skincare, beauty products, and wellness for radiant skin." />
+  <title>GlowZ — Beauty & Skincare Company</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg1:#000000;
-      --bg2:oklab(42.480000000000004% 0.08222 -0.16435);
-      --accent:#ff8c00;
-      --glass: rgba(255,255,255,0.06);
-      --glass-strong: rgba(255,255,255,0.10);
+      --bg1: #fff;
+      --bg2: #ff9800; /* Orange */
+      --accent: #ff9800;
+      --glass: rgba(255,255,255,0.18);
+      --glass-strong: rgba(255,152,0,0.10);
       --max-width:1200px;
     }
     *{box-sizing:border-box}
@@ -22,8 +21,8 @@
     body{
       margin:0;
       font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      background: linear-gradient(135deg,var(--bg1),#1a2a6c 40%, var(--bg2));
-      color:#fff;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2) 100%);
+      color:#3d2c29;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
@@ -41,228 +40,224 @@
       align-items:center;
       justify-content:space-between;
       padding:14px 24px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(255,255,255,0));
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0));
       backdrop-filter: blur(8px);
-      border-bottom:1px solid rgba(255,255,255,0.04);
+      border-bottom:1px solid rgba(224,122,95,0.04);
     }
-    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px;width:100%}
+    .container {
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      width: 100%;
+      box-sizing: border-box;
+    }
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:46px;height:46px;border-radius:10px;background:
-      conic-gradient(from 120deg,#ff8c00,#ffd07a 40%, #7bdff6 70%, #8a8cff 100%);
-      box-shadow:0 6px 20px #0000006e, inset 0 -6px 18px rgba(255,255,255,0.02);
-      display:grid;place-items:center;font-weight:700;color:#07102a;
-      font-size:18px;
+    
+    /* === LOGO CSS UPDATED === */
+    /* Replaced the .logo DIV styles with styles for the new .logo-img */
+    .logo-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px; /* Kept the rounded corners from original design */
+      object-fit: cover;   /* Use 'cover' to fill the 46x46 space */
+      box-shadow: 0 6px 20px #e07a5f33; /* Kept the simple outer shadow for consistency */
     }
-    header h1{font-size:18px;margin:0;color:#fff;letter-spacing:0.2px}
+    
+    header h1{font-size:18px;margin:0;color:#e07a5f;letter-spacing:0.2px}
     nav{display:flex;gap:18px;align-items:center}
     nav a{
-      color:#fff;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;
+      color:#3d2c29;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;
       transition:all .18s ease;
     }
     nav a:hover, nav a[aria-current="true"]{background:var(--glass-strong); color:var(--accent)}
 
     /* Mobile nav toggle */
-    .nav-toggle{display:none;border:0;background:transparent;color:#fff;font-size:20px}
+    .nav-toggle{display:none;border:0;background:transparent;color:#e07a5f;font-size:20px}
 
     /* Hero */
     .hero{
-      min-height:86vh;
+      min-height:60vh;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding-top:88px; /* account for fixed header */
+      padding-top:88px;
     }
     .hero-inner{
       width:100%;
-      max-width:1100px;
+      max-width:900px;
       display:grid;
-      grid-template-columns:1fr 420px;
-      gap:50px;
+      grid-template-columns:1fr 340px;
+      gap:28px;
       align-items:center;
-      padding:20px; /* Reduced from 40px to 20px */
+      padding:10px;
     }
     .hero-copy h2{
-      margin:0 0 16px 0;
-      font-size:44px;
-      line-height:1.02;
+      margin:0 0 10px 0;
+      font-size:32px;
+      line-height:1.1;
       letter-spacing:-0.5px;
+      color:#e07a5f;
     }
-    .lead{font-size:18px;color:rgba(255,255,255,0.9);margin-bottom:18px;max-width:48rem}
+    .lead{font-size:15px;color:#3d2c29;margin-bottom:12px;max-width:40rem}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .btn{
       display:inline-flex;align-items:center;gap:10px;
       padding:12px 18px;border-radius:999px;border:0;cursor:pointer;font-weight:700;
-      text-decoration:none;color:#07102a;background:linear-gradient(90deg,var(--accent),#ffc36b);
-      box-shadow:0 8px 26px rgba(255,140,0,0.12);
+      text-decoration:none;color:#fff;background:linear-gradient(90deg,var(--accent),#f4a261);
+      box-shadow:0 8px 26px rgba(224,122,95,0.12);
       transition:transform .16s ease,box-shadow .16s ease;
     }
-    .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,0.35)}
-    .btn.alt{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.08);box-shadow:none}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(224,122,95,0.18)}
+    .btn.alt{background:transparent;color:#e07a5f;border:1px solid #e07a5f;box-shadow:none}
 
     /* Visual / media card */
     .media-card{
-      border-radius:16px;padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.12));
-      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      border-radius:16px;padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.13), rgba(224,122,95,0.08));
+      box-shadow: 0 12px 40px rgba(224,122,95,0.10);
       display:flex;flex-direction:column;gap:12px;
     }
     .media-preview{
-      width:100%;height:240px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#111 0%, rgba(255,255,255,0.02)100%);
+      width:100%;height:240px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#fff 0%, rgba(224,122,95,0.02)100%);
       display:grid;place-items:center;position:relative;
     }
-    .media-preview svg{opacity:0.08;position:absolute;inset:0;width:100%;height:100%}
+    .media-preview img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
     .media-meta{display:flex;justify-content:space-between;align-items:center;padding:6px 4px}
 
     /* Sections */
-    section{padding:80px 0}
-    h2.section-title{font-size:28px;margin:0 0 12px 0}
-    p.section-sub{color:rgba(255,255,255,0.8);margin:0 0 26px 0;max-width:60ch}
+    section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2.section-title{font-size:28px;margin:0 0 12px 0;color:#e07a5f;}
+    p.section-sub{color:#3d2c29;margin:0 0 26px 0;max-width:60ch}
 
     /* Services / cards */
     .grid{display:grid;gap:20px}
     .services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
     .card{
       background:var(--glass);padding:20px;border-radius:12px;
-      backdrop-filter: blur(8px);border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);border:1px solid #ffe5d0;
       transition:transform .18s ease, box-shadow .18s ease;
     }
-    .card:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(2,6,23,0.5)}
-    .card h4{margin:0 0 8px 0}
-    .card p{margin:0;color:rgba(255,255,255,0.85)}
+    .card:hover{transform:translateY(-8px);box-shadow:0 30px 70px #e07a5f33}
+    .card h4{margin:0 0 8px 0;color:#e07a5f;}
+    .card p{margin:0;color:#3d2c29}
 
-    /* Portfolio */
+    /* Portfolio (Products) */
     .portfolio{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .portfolio-item {
-      height:220px;
-      border-radius:12px;
-      overflow:hidden;
-      position:relative;
-      background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.14));
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      padding:14px;
-      border:1px solid rgba(255,255,255,0.03);
-      transition:transform .18s ease, box-shadow .18s ease;
+      background: var(--glass);
+      padding: 12px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      border: 1px solid #ffe5d0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: transform .18s ease, box-shadow .18s ease;
+      box-shadow: 0 10px 30px #e07a5f18;
+      min-height: 200px;
+      justify-content: flex-start;
+      position: relative;
+    }
+    .portfolio-item img {
+      object-fit: cover;
+      width: 72px;
+      height: 72px;
+      margin-bottom: 8px;
+      margin-top: 10px;
+      background: #fff;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px #e07a5f33;
+    }
+    .portfolio-item h5 {
+      margin: 0 0 12px 0;
+      font-size: 15px;
+      text-align: left;
+      color:#e07a5f;
+    }
+    .portfolio-item .muted {
+      color: #3d2c29;
+      font-size: 12px;
+      text-align: left;
     }
     .portfolio-item:hover {
-      transform:translateY(-8px) scale(1.04);
-      box-shadow:0 30px 70px rgba(2,6,23,0.5);
-      z-index:2;
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 30px 70px #e07a5f33;
+      z-index: 2;
     }
     .portfolio-overlay {
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));
-      opacity:0;
-      transition:opacity .18s;
-    }
-    .portfolio-item:hover .portfolio-overlay {
-      opacity:1;
+      display: none !important;
     }
 
     /* Team */
     .team{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
     .member{display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px}
-    .avatar{width:104px;height:104px;border-radius:14px;background:linear-gradient(180deg,#fff, #eee);display:grid;place-items:center;color:#07102a;font-weight:700;font-size:22px;box-shadow:0 10px 30px rgba(2,6,23,0.5)}
+    .avatar{width:104px;height:104px;border-radius:14px;background:linear-gradient(180deg,#fff, #ffe5d0);display:grid;place-items:center;color:#e07a5f;font-weight:700;font-size:22px;box-shadow:0 10px 30px #e07a5f33}
 
     /* Contact area */
     .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:28px}
     form{display:flex;flex-direction:column;gap:12px}
     input,textarea,select{
-      width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
-      background:rgba(0,0,0,0.18);color:lab(100% 0.01 -0.01);font-size:15px;
+      width:100%;padding:12px;border-radius:10px;border:1px solid #ffe5d0;
+      background:rgba(255,255,255,0.8);color:#3d2c29;font-size:15px;
     }
     select#project, #project option {
-      background-color: #0008ff !important;
-      color: hsl(0, 0%, 100%);
+      background-color: #ffe5d0 !important;
+      color: #e07a5f;
     }
     textarea{min-height:140px;resize:vertical}
-    .muted{color:hwb(0 100% 0%);font-size:14px}
+    .muted{color:#a68a7f;font-size:14px}
 
     footer{
-      padding:28px 0;background:linear-gradient(180deg, rgba(0,0,0,0.06), transparent);border-top:1px solid rgba(255,255,255,0.02);
+      padding:28px 0;background:linear-gradient(180deg, rgba(255,255,255,0.06), transparent);border-top:1px solid #ffe5d0;
       margin-top:40px;
     }
     .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 
     /* Responsive */
     @media (max-width:980px){
-      .hero-inner{grid-template-columns:1fr; padding:28px}
+      .hero-inner{grid-template-columns:1fr; padding:18px}
       .contact-grid{grid-template-columns:1fr}
       .media-preview{height:200px}
       .nav-toggle{display:block}
       nav{display:none}
-      header nav.open{display:flex;position:absolute;right:20px;top:66px;background:rgba(11,7,20,0.7);padding:10px;border-radius:12px;flex-direction:column}
+      header nav.open{display:flex;position:absolute;right:20px;top:66px;background:#ffe5d0cc;padding:10px;border-radius:12px;flex-direction:column}
     }
-
-    /* Make portfolio items look and behave like team cards */
-    .portfolio-item {
-      background: var(--glass);
-      padding: 20px;
-      border-radius: 12px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.03);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      transition: transform .18s ease, box-shadow .18s ease;
-      box-shadow: 0 10px 30px rgba(2,6,23,0.18);
-      min-height: 200px;         /* Reduced from 320px */
-      justify-content: flex-start;
-      position: relative;
+    @media (max-width: 700px) {
+      .container {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
     }
-
-    .portfolio-item img {
-      object-fit: cover;
-      width: 72px;               /* Reduced from 104px */
-      height: 72px;              /* Reduced from 104px */
-      margin-bottom: 8px;        /* Reduced from 8px */
-      margin-top: 10px;           /* Reduced from 10px */
-      background: #fff;
-      display: block;
-    }
-
-    .portfolio-item h5 {
-      margin: 0 0 12px 0; /* Increased bottom margin from 4px to 12px */
-      font-size: 15px;
-      text-align: left;
-    }
-
-    .portfolio-item .muted {
-      color: hwb(0 100% 0%);
-      font-size: 12px;           /* Reduced from 14px */
-      text-align: left;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-8px) scale(1.04);
-      box-shadow: 0 30px 70px rgba(2,6,23,0.5);
-      z-index: 2;
-    }
-
-    .portfolio-overlay {
-      display: none !important;
-    }
-
   </style>
 </head>
 <body>
   <header role="banner" aria-label="Main header">
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      
       <div class="brand" aria-hidden="false">
-        <div class="logo" aria-hidden="true">VX</div>
+        <img src="https://elegantquill.com/cdn/shop/products/simplistic-logo-GZ-initials-gold_1024x1024.png?v=1670270817" alt="GlowZ Logo" class="logo-img">
         <div>
-          <h1 style="margin:0;font-size:16px">Visual X Productions</h1>
-          <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px">Film • Brand • Digital</div>
+          <h1 style="margin:0;font-size:16px">GlowZ Skincare</h1>
+          <div style="font-size:12px;color:#a68a7f;margin-top:4px">Beauty • Wellness • Natural</div>
         </div>
       </div>
 
       <nav aria-label="Primary navigation" id="primaryNav">
         <a href="#home" aria-current="true">Home</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#team">Team</a>
+        <a href="#portfolio">Products</a>
+        <a href="#team">Experts</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -270,106 +265,99 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
     <section id="home" class="hero" aria-label="Hero section">
       <div class="container hero-inner" role="region" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h2 id="hero-title">We tell stories that move people — visuals, sound, emotion.</h2>
-          <p class="lead">Visual X is a full-service media production house: screenwriting, cinematography, editing, and brand films. We craft cinematic experiences across platforms — from shorts and ads to feature content.</p>
+          <h2 id="hero-title">Reveal Your Natural Glow — Skincare, Beauty, Wellness.</h2>
+          <p class="lead">GlowZ is dedicated to natural skincare and beauty. Our products are crafted with pure ingredients to nourish, protect, and enhance your skin’s natural radiance. Discover your glow with us.</p>
           <div class="actions">
-            <a class="btn" href="#contact">Start a Project</a>
-            <a class="btn alt" href="#portfolio">View Portfolio</a>
+            <a class="btn" href="#contact">Shop Now</a>
+            <a class="btn alt" href="#portfolio">View Products</a>
           </div>
         </div>
 
-        <aside class="media-card" aria-label="Featured showreel preview">
-          <div class="media-preview" role="img" aria-label="Recent Work video">
-            <video id="mainVideoPlayer" controls width="100%" height="240" poster="images/Hope.jpg" style="border-radius:12px;">
-              <source src="images/Hope.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+        <aside class="media-card" aria-label="Featured product preview">
+          <div class="media-preview" role="img" aria-label="Featured Product">
+            <img src="https://s1.thcdn.com/design-assets/products/15012159-pm/15012159/15012159-pm.webp" alt="GlowZ Vitamin C Serum" />
           </div>
           <div class="media-meta" aria-hidden="false">
             <div>
-              <strong>Recent Work</strong>
-              <div class="muted">Brand film • 2:13</div>
+              <strong>Vitamin C Radiance Serum</strong>
+              <div class="muted">Best Seller • 30ml</div>
             </div>
             <div style="display:flex;gap:8px">
-              <a class="btn alt" href="#portfolio" style="padding:8px 12px">See Projects</a>
+              <a class="btn alt" href="#portfolio" style="padding:8px 12px">See Products</a>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" aria-labelledby="portfolio-title" style="margin-top:100px;">
+    <section id="portfolio" aria-labelledby="portfolio-title" style="margin-top:300px;">
       <div class="container">
-        <h2 class="section-title" id="portfolio-title">Selected Portfolio</h2>
-        <p class="section-sub">A curated selection of recent films, ads and brand films. Replace these placeholders with your own thumbnails or video embeds.</p>
+        <h2 class="section-title" id="portfolio-title">Our Bestsellers</h2>
+        <p class="section-sub">A curated selection of our most loved skincare and beauty products. All made with natural, cruelty-free ingredients.</p>
 
         <div class="grid portfolio" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-          <div class="portfolio-item" role="article" aria-label="Project One">
-            <img src="images/Art_Poster_-_Pather_Panchali_-_Satyajit_Ray_Collection.jpg" alt="Feature Film" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+          <div class="portfolio-item" role="article" aria-label="Vitamin C Serum">
+            <img src="https://s1.thcdn.com/design-assets/products/15012159-pm/15012159/15012159-pm.webp" alt="Vitamin C Serum">
             <div class="portfolio-overlay"></div>
-            <h5>Feature Film</h5>
-            <div class="muted"></div>
+            <h5>Vitamin C Radiance Serum</h5>
+            <div class="muted">Brightens & evens skin tone</div>
           </div>
-          <div class="portfolio-item" role="article" aria-label="Project Two">
-            <img src="images/whatsapp-image-2021-09-16-at-12-21-15-pm_orig.jpeg" alt="Short Film" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+          <div class="portfolio-item" role="article" aria-label="Hydrating Moisturizer">
+            <img src="https://hempz.com/cdn/shop/files/140-2615-03_Moisturizer-HydratingDay3ozFRONTcopy_90ac5542-2f9a-4d3b-9cca-fd01c799696d_800x.jpg?v=1715886941" alt="Hydrating Moisturizer">
             <div class="portfolio-overlay"></div>
-            <h5>Short Film</h5>
-            <div class="muted"></div>
+            <h5>Hydrating Day Moisturizer</h5>
+            <div class="muted">Deep hydration, lightweight feel</div>
           </div>
-          <div class="portfolio-item" role="article" aria-label="Project Three">
-            <img src="images/Mahavatar_Narsimha_film_poster.jpg" alt="Animation" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+          <div class="portfolio-item" role="article" aria-label="Gentle Cleanser">
+            <img src="https://anua.com/cdn/shop/files/anua-us-cleanser-150ml-8-hyaluronic-acid-hydrating-gentle-foaming-cleanser-1161173123.jpg?v=1746610303&width=1080" alt="Gentle Cleanser">
             <div class="portfolio-overlay"></div>
-            <h5>Animation</h5>
-            <div class="muted"></div>
+            <h5>Gentle Foaming Cleanser</h5>
+            <div class="muted">Removes impurities, non-drying</div>
           </div>
-          <div class="portfolio-item" role="article" aria-label="Project Four">
-            <img src="images/movies-hollywood-movies-wallpaper-preview.jpg" alt="VFX and CGI" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;display:block;margin-bottom:3px;">
+          <div class="portfolio-item" role="article" aria-label="SPF Sunscreen">
+            <img src="https://avimeeherbal.com/cdn/shop/files/1_82e42a30-cdba-4d41-94b7-2eb7d184ad25.png?v=1708692130&width=2000" alt="SPF Sunscreen">
             <div class="portfolio-overlay"></div>
-            <h5>VFX and CGI</h5>
-            <div class="muted"></div>
+            <h5>SPF 50+ Mineral Sunscreen</h5>
+            <div class="muted">Broad spectrum, non-greasy</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TEAM -->
-    <section id="team" aria-labelledby="team-title" style="margin-top:-150px;"></section>
+    <section id="team" aria-labelledby="team-title" style="margin-top:-70px;">
       <div class="container">
-        <h2 class="section-title" id="team-title">Core Team</h2>
-        <p class="section-sub">Small and nimble — we scale the crew depending on the project.</p>
+        <h2 class="section-title" id="team-title">Our Experts</h2>
+        <p class="section-sub">Meet the skincare specialists and beauty experts behind GlowAura.</p>
 
         <div class="grid team" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));">
-          <div class="card member" role="article" aria-label="Sayan Biswas, Founder & Director">
-            <img src="images/WhatsApp Image 2025-11-14 at 19.07.42_579e057b.jpg" alt="Sayan Biswas" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
-            <div style="text-align:center"><strong>Sayan Biswas</strong><div class="muted">Founder & Director</div></div>
+          <div class="card member" role="article" aria-label="Dr. Ananya Sen, Dermatologist">
+            <img src="https://thumbs.dreamstime.com/b/portrait-happy-smiling-man-standing-crossed-arms-pose-against-yellow-background-caucasian-male-model-smart-casual-202971786.jpg" alt="Dr. Ananya Sen" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px #e07a5f33;margin-bottom:8px;">
+            <div style="text-align:center"><strong>Sayan Biswas</strong><div class="muted">Founder</div></div>
           </div>
-          <div class="card member" role="article" aria-label="Debjyoti Pal, Director & Producer">
-            <img src="images/IMG_20240602_002109_603.jpg" alt="Debjyoti Pal" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
-            <div style="text-align:center"><strong>Debjyoti Pal</strong><div class="muted">Director & Producer</div></div>
+          <div class="card member" role="article" aria-label="Riya Kapoor, Product Formulator">
+            <img src="https://media.gettyimages.com/id/1282821098/photo/happy-young-man-in-the-city.jpg?s=612x612&w=0&k=20&c=KUajS9u8aPbKPoDh7ZUaHEhasFJyjsKqzAnou7xfXCc=" alt="Riya Kapoor" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px #e07a5f33;margin-bottom:8px;">
+            <div style="text-align:center"><strong>Debjyoti Pal</strong><div class="muted">Co-Founder</div></div>
           </div>
-          <div class="card member" role="article" aria-label="Partha Pratim Kar, VFX Supervisor">
-            <img src="images/Screenshot_2025-11-14-19-05-57-09_1c337646f29875672b5a61192b9010f9.jpg" alt="Partha Pratim Kar" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
-            <div style="text-align:center"><strong>Partha Pratim Kar</strong><div class="muted">VFX Supervisor</div></div>
+          <div class="card member" role="article" aria-label="Meera Sharma, Beauty Advisor">
+            <img src="https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Meera Sharma" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px #e07a5f33;margin-bottom:8px;">
+            <div style="text-align:center"><strong>Partha Pratim Kar</strong><div class="muted">CEO</div></div>
           </div>
-          <div class="card member" role="article" aria-label="Dhruv Bhattacharjya, Actor & Director">
-            <img src="images/Screenshot_2025-11-14-19-04-42-87_1c337646f29875672b5a61192b9010f9.jpg" alt="Dhruv Bhattacharjya" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.5);margin-bottom:8px;">
-            <div style="text-align:center"><strong>Dhruv Bhattacharjya</strong><div class="muted">Actor & Director</div></div>
+          <div class="card member" role="article" aria-label="Priya Das, Wellness Coach">
+            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Priya Das" class="avatar" style="object-fit:cover;width:104px;height:104px;border-radius:14px;box-shadow:0 10px 30px #e07a5f33;margin-bottom:8px;">
+            <div style="text-align:center"><strong>Sujit Bose</strong><div class="muted">Product Manager</div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" aria-labelledby="contact-title" style="margin-top:-40px;"></section>
+    <section id="contact" aria-labelledby="contact-title" style="margin-top:-40px;">
       <div class="container">
-        <h2 class="section-title" id="contact-title">Contact & Start a Project</h2>
-        <p class="section-sub">Tell us about your project. Use the form below — it will open your email client with details prefilled (works across desktop & mobile).</p>
+        <h2 class="section-title" id="contact-title">Contact & Consultation</h2>
+        <p class="section-sub">Have a question or want a personalized skincare consultation? Fill out the form below and our experts will get in touch.</p>
 
         <div class="contact-grid" style="align-items:start">
           <div>
@@ -378,48 +366,46 @@
               <input id="name" name="name" required placeholder="Full name" />
 
               <label class="muted" for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="sayanbiswas6922@gmail.com" />
+              <input id="email" name="email" type="email" required placeholder="you@email.com" />
 
-              <label class="muted" for="project">Project type</label>
+              <label class="muted" for="project">Consultation type</label>
               <select id="project" name="project" required>
                 <option value="">Select...</option>
-                <option>Feature Film</option>
-                <option>Short Film</option>
-                <option>Ad Film</option>
-                <option>Animation</option>
-                <option>Editing & VFX</option>
+                <option>Skin Analysis</option>
+                <option>Product Recommendation</option>
+                <option>Routine Planning</option>
+                <option>Allergy & Sensitivity</option>
                 <option>Other</option>
               </select>
 
-              <label class="muted" for="message" style="color:#fff">Project brief</label>
-              <textarea id="message" name="message" placeholder="Briefly describe scope, deliverables, timeline, and budget (optional)"></textarea>
+              <label class="muted" for="message" style="color:#3d2c29">Your message</label>
+              <textarea id="message" name="message" placeholder="Describe your skin concerns, goals, or questions"></textarea>
 
               <div style="display:flex;gap:12px;margin-top:8px">
-                <button type="submit" class="btn">Email us</button>
+                <button type="submit" class="btn">Send Email</button>
                 <button type="button" class="btn alt" onclick="openWhatsApp()">Message on WhatsApp</button>
               </div>
             </form>
           </div>
 
           <aside style="padding:18px;border-radius:12px;background:var(--glass)">
-            <h4 style="margin-top:0">Quick contacts</h4>
-            <p class="muted">Office email</p>
-            <p><a href="mailto:sayanbiswas6922@gmail.com" style="color:var(--accent);text-decoration:none;font-weight:700">sayanbiswas6922@gmail.com</a></p>
+            <h4 style="margin-top:0;color:#e07a5f;">Quick contacts</h4>
+            <p class="muted">Customer care email</p>
+            <p><a href="mailto:sayanbiswas6922@gmai.com" style="color:var(--accent);text-decoration:none;font-weight:700">sayanbiswas6922@gmai.com</a></p>
 
             <p class="muted">Phone</p>
-            <p><a href="tel:+919609573435" style="color:var(--accent);text-decoration:none;font-weight:700">+91 9609573435</a></p>
+            <p><a href="tel:+919600000000" style="color:var(--accent);text-decoration:none;font-weight:700">+91 9609573435</a></p>
 
             <p class="muted">Studio</p>
-            <p style="margin-top:6px">Barasat, Kolkata, India</p>
+            <p style="margin-top:6px">Kolkata, India</p>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer role="contentinfo">
       <div class="container footer-inner">
-        <div>© <span id="year"></span> All rights reserved to Visual X Productions.</div>
+        <div>© <span id="year"></span> All rights reserved to GlowZ Skincare.pvt.ltd</div>
         <div class="muted">Designed by Sayan Biswas</div>
       </div>
     </footer>
@@ -446,10 +432,8 @@
           const section = document.getElementById(id);
           if (section) {
             e.preventDefault();
-            // Close mobile nav if open
             nav.classList.remove('open');
             navToggle.setAttribute('aria-expanded', 'false');
-            // Scroll to section smoothly, offset for fixed header
             const yOffset = -80;
             const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: y, behavior: 'smooth' });
@@ -466,19 +450,18 @@
       const project = document.getElementById('project').value || 'Not specified';
       const message = document.getElementById('message').value.trim() || '—';
 
-      const subject = encodeURIComponent('New project enquiry from ' + name);
+      const subject = encodeURIComponent('New skincare enquiry from ' + name);
       const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nProject type: ${project}\n\nProject brief:\n${message}\n\n---\nSent from Visual X website`
+        `Name: ${name}\nEmail: ${email}\nConsultation type: ${project}\n\nMessage:\n${message}\n\n---\nSent from GlowZ website`
       );
 
-      // open the user's email client
-      window.location.href = `Mail to : hello@visualx.example?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:hello@glowz.com?subject=${subject}&body=${body}`;
     }
 
     // WhatsApp quick chat (works if user has WhatsApp)
     function openWhatsApp(){
-      const phone = '+911234567890';
-      const text = encodeURIComponent('Hi Visual X — I would like to discuss a project. Please connect.');
+      const phone = '+919600000000';
+      const text = encodeURIComponent('Hi GlowZ — I would like to get a skincare consultation. Please connect.');
       window.open(`https://wa.me/${phone.replace(/\D/g,'')}?text=${text}`, '_blank');
     }
 
